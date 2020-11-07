@@ -1,7 +1,7 @@
 import logo from './images/logo.svg';
 import './App.css';
 
-import React,{useState}from 'react';
+import React,{Profiler, useState}from 'react';
 
 function App2() {
   return (
@@ -495,9 +495,9 @@ function App(){
        <App11/>      
        <App12/>      
        <App13/>      
+    
     </div>
    
-  // <App14/>      
   )
 }
 
