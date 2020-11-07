@@ -8,7 +8,6 @@ function App2() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <img src={logo} className="App-logo" alt = "logo"></img>
         <p>
           Edit <code>src/App.js</code> and save to reload.
           IG Kim
@@ -381,12 +380,47 @@ function Modal11(props){
   )
 }
 
+// 
+function App12(){
+let[clicked,setClicked]=useState(0);
+let[state2,setState2]=useState([11,22,33]);
+
+let [input,setInput]=useState('');
+
+  return(
+    <div>
+      <p className="black-nav">12</p>
+      // 1. 2-2
+      <input type="text" onChange={()=>{console.log('hi')}}></input>
+
+      // 2-3
+      <input type="text" onInput={(e)=>{console.log(e.target.value)}}/>
+
+      // 2-4
+      <input type="text" onInput={(e)=>{setInput(e.target.value)}}></input>
+      // 2-5
+     inputState: {input}
+
+     {
+      state2.map((a,i)=>{
+        return(
+          <div key ={i}>
+          
+          <button onClick={()=>{ setClicked(i)}}> {a}</button>
+          </div>
+        )
+      })
+    }
+
+    </div>
+  )
+}
 
 // 
 function App55(){
   return(
     <div>
-      <p className="black-nav">new</p>
+      <p className="black-nav">12</p>
       <Modal55></Modal55>
     </div>
   )
@@ -416,9 +450,9 @@ function App(){
        <App9/>
        <App10/>      
        <App11/>      
+       <App12/>      
     </div>
    
-  // <App12/>      
   // <App13/>      
   // <App14/>      
   )
