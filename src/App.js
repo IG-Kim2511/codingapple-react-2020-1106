@@ -417,6 +417,49 @@ let [input,setInput]=useState('');
 }
 
 // 
+function App13(){
+  // 1-2
+
+  let [글state,글stateset] = useState([11,22,33]);
+
+  let [inputState, inputStateset] =useState('');
+
+
+  return(
+    <div>
+      <p className="black-nav">13</p>
+      <div className='publish'>
+      // 1
+      <input onInput={(e)=>{inputStateset(e.target.value)}}/>
+      {inputState}
+      // 1-2
+      <button onClick={()=>{ 글stateset('gogo',11,22,33) }}> save </button>
+      {글state[1]}
+      
+      
+      </div>
+
+      <div>
+       <input onInput={(e)=>{ (inputStateset(e.target.value))  }}></input>
+       <button onClick={()=>{ 
+      
+        var arrayCopy =[...글state]
+      
+        arrayCopy.unshift(inputState);
+        글stateset(글state)
+      }}></button>
+
+       
+      
+      </div>
+
+  
+    </div>
+  )
+}
+
+
+// 
 function App55(){
   return(
     <div>
@@ -451,9 +494,9 @@ function App(){
        <App10/>      
        <App11/>      
        <App12/>      
+       <App13/>      
     </div>
    
-  // <App13/>      
   // <App14/>      
   )
 }
